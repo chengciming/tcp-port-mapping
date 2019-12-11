@@ -3,14 +3,15 @@
     "type": "project",
 	"version": "1.0.0",
     "keywords": [
-        "tcp-port-mapping",
-        "port-mapping"
+		"tcp-port-mapping",
+        "port-mapping",
+        "TCP端口映射"
     ],
     "license": "Apache-2.0",
     "description": "使用workerman框架开发的TCP端口映射项目",
     "authors": [
         {
-            "name": "Alme",
+            "name": "chengciming",
             "email": "314588938@qq.com",
             "role": "Developer"
         }
