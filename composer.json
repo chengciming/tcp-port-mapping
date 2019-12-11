@@ -1,0 +1,32 @@
+{
+    "name": "chengciming/tcp-port-mapping",
+    "type": "project",
+	"version": "1.0.0",
+    "keywords": [
+        "tcp-port-mapping",
+        "port-mapping"
+    ],
+    "license": "Apache-2.0",
+    "description": "使用workerman框架开发的TCP端口映射项目",
+    "authors": [
+        {
+            "name": "Alme",
+            "email": "314588938@qq.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "workerman/workerman": "^3.5.22"
+    },
+    "suggest": {
+        "ext-swoole": "For better performance. ",
+        "ext-event": "For better performance. "
+    },
+    "autoload": {
+        "psr-4": {
+            "Mapping\\": "./"
+        }
+    },
+    "minimum-stability": "dev"
+}
