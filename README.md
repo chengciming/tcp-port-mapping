@@ -138,5 +138,5 @@ php server reload    // 重载服务端服务
 
 ## 运行过程
 
-![Alt text](/Storage/material/working.png)
+![图](https://raw.githubusercontent.com/chengciming/tcp-port-mapping/master/Storage/material/working.png)
 
