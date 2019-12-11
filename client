@@ -2,6 +2,5 @@
 // 自动加载
 require_once 'App.php';
 
-// 启动
-\Mapping\Application\Handle::run(\Mapping\Application\Client::class);
-
+// 运行
+App::run(\Mapping\Application\Client::class);
