@@ -2,6 +2,13 @@
 
 这是一个使用workerman框架开发的，针对内网环境TCP端口映射到外网环境指定端口。
 
+亲，有在应用的同学请给个星星，有星星表示有人应用，好持续更新维护代码。
+
+## 环境假设
+
+1. 外网服务器：可运行PHP，映射后通过这台机访问。 
+2. 内网服务器：可运行PHP，连接外网服务器做转发，或者与目标服务器同一台。
+3. 目标服务器：需要被映射到外网的服务器。
 
 ## 运行环境
 
@@ -11,12 +18,12 @@
 ## 快速下载
 
 ```shell
-$ composer require chengciming/tcp-port-mapping
+[composer@localhost tcp-port-mapping]# composer require chengciming/tcp-port-mapping
 ```
 
 ## 配置
 
-公共配置：Config/Config.php
+### 公共配置：Config/Config.php
 ```php
 <?php
 
@@ -66,7 +73,7 @@ return array(
     ),
 );
 ```
-协议配置：Config/***Conf.php   [Http、Https、Ssh等]
+### 协议配置：Config/***Conf.php   [Http、Https、Ssh等]
 ```php
 <?php
 
@@ -104,36 +111,37 @@ return array(
 ```
 
 ## 新增加协议
-
+### 示例：telnet
+#### 配置：
 ```
-示例：telnet
-
---配置：
-----新增加telnet协议配置文件(可复制HttpConf.php)：Config/TelnetConf.php
-----开启telnet协议：Config/Config.php  -->  protocol_support加telnet
-
---内核文件(可复制Http.php)：
-----新增加telnet协议客户端处理文件：Application/Kernel/Protocol/Client/Telnet.php
-----新增加telnet协议服务端处理文件：Application/Kernel/Protocol/Server/Telnet.php
+新增加telnet协议配置文件(可复制HttpConf.php)：Config/TelnetConf.php
+开启telnet协议：Config/Config.php  -->  protocol_support加telnet
+```
+#### 内核文件(可复制Http.php)：
+```
+新增加telnet协议客户端处理文件：Application/Kernel/Protocol/Client/Telnet.php
+新增加telnet协议服务端处理文件：Application/Kernel/Protocol/Server/Telnet.php
 ```
 
 ## 启动命令
 
-客户端:
+### 安装依赖：composer install
+
+### 客户端:
 
 ```shell
-php client start     // 开启客户端服务
-php client stop      // 关闭客户端服务
-php client restart   // 重启客户端服务
-php client reload    // 重载客户端服务
+[root@localhost tcp-port-mapping]# php client start     // 开启客户端服务
+[root@localhost tcp-port-mapping]# php client stop      // 关闭客户端服务
+[root@localhost tcp-port-mapping]# php client restart   // 重启客户端服务
+[root@localhost tcp-port-mapping]# php client reload    // 重载客户端服务
 ```
-服务端:
+### 服务端:
 
 ```shell
-php server start     // 开启服务端服务
-php server stop      // 关闭服务端服务
-php server restart   // 重启服务端服务
-php server reload    // 重载服务端服务
+[root@localhost tcp-port-mapping]# php server start     // 开启服务端服务
+[root@localhost tcp-port-mapping]# php server stop      // 关闭服务端服务
+[root@localhost tcp-port-mapping]# php server restart   // 重启服务端服务
+[root@localhost tcp-port-mapping]# php server reload    // 重载服务端服务
 ```
 
 ## 运行过程
