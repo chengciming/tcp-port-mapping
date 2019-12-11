@@ -1,7 +1,8 @@
 <?php
 // 自动加载
 require_once 'App.php';
-
+// 注册
+App::register();
 // 运行
 App::run(\Mapping\Application\Server::class);
 

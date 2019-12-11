@@ -16,7 +16,11 @@ class App
         // 定义根目录
         define('ROOT_PATH', str_replace(array('/'.basename(__FILE__), '\\'.basename(__FILE__)), '', __FILE__));
         // 自动加载
-        require_once ROOT_PATH . '/vendor/autoload.php';
+        if (file_exists(ROOT_PATH . '/vendor/autoload.php')) {
+            require_once ROOT_PATH . '/vendor/autoload.php';
+        } else if (file_exists(ROOT_PATH . '/../../autoload.php')) {
+            require_once ROOT_PATH . '/../../autoload.php';
+        }
     }
 
     /**
@@ -28,8 +32,6 @@ class App
      */
     public static function run($object)
     {
-        // 注册
-        self::register();
         // 启动
         \Mapping\Application\Handle::run($object);
     }
