@@ -17,11 +17,12 @@
 
 ## 快速下载
 
-### 下载
+### 下载：
 ```shell
 [composer@localhost test]# composer create-project chengciming/tcp-port-mapping
 ```
-### 启动
+
+### 启动：
 ```shell
 [composer@localhost test]# cd tcp-port-mapping
 [composer@localhost tcp-port-mapping]# php client start
@@ -132,18 +133,20 @@ return array(
 
 ## 启动命令
 
-### 安装依赖：composer install
+### 安装依赖：
+```shell
+[root@localhost tcp-port-mapping]# composer install
+```
 
 ### 客户端:
-
 ```shell
 [root@localhost tcp-port-mapping]# php client start     // 开启客户端服务
 [root@localhost tcp-port-mapping]# php client stop      // 关闭客户端服务
 [root@localhost tcp-port-mapping]# php client restart   // 重启客户端服务
 [root@localhost tcp-port-mapping]# php client reload    // 重载客户端服务
 ```
-### 服务端:
 
+### 服务端:
 ```shell
 [root@localhost tcp-port-mapping]# php server start     // 开启服务端服务
 [root@localhost tcp-port-mapping]# php server stop      // 关闭服务端服务
