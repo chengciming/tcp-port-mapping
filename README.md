@@ -15,10 +15,35 @@
 1. PHP >= 7.0
 2. **[Composer](https://getcomposer.org/)**
 
-## 快速下载
+## 快速安装
 
+### 下载
 ```shell
 [composer@localhost tcp-port-mapping]# composer require chengciming/tcp-port-mapping
+```
+### client端启动文件
+```php
+<?php
+// 自动加载
+require_once 'vendor/chengciming/tcp-port-mapping/App.php';
+// 注册
+App::register();
+// 运行
+App::run(\Mapping\Application\Client::class);
+```
+### server端启动文件
+```php
+// 自动加载
+require_once 'vendor/chengciming/tcp-port-mapping/App.php';
+// 注册
+App::register();
+// 运行
+App::run(\Mapping\Application\Server::class);
+```
+### 启动
+```shell
+[composer@localhost tcp-port-mapping]# php client start
+[composer@localhost tcp-port-mapping]# php server start
 ```
 
 ## 配置
